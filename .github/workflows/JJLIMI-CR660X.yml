@@ -47,7 +47,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
@@ -56,7 +56,12 @@ jobs:
       
     - name: Checkout
       uses: actions/checkout@master
-
+      
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+        
     - name: Check server performance
       run: |
         echo "警告⚠"
