@@ -62,9 +62,7 @@ jobs:
       with:
         node-version: 16.x
         
-    - name: Use the dev-drprasad/delete-older-releases action
-      uses: dev-drprasad/delete-older-releases@v0.1.0
-       
+
        
 
     - name: Check server performance
