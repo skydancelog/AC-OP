@@ -9,7 +9,7 @@
 #============================================================
 #G20230520
 name: JJLIMI-CR660X
-#
+
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -54,17 +54,14 @@ jobs:
     #- name: WeChat notification
     #  run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}开始编译
       
-   # - name: Checkout
-   #   uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
       
   #  - name: setup-node
   #    uses: actions/setup-node@v3
   #    with:
   #      node-version: 16.x
-  #  - uses: actions/cache@v2
-    - name: setup-node
-    - uses: actions/checkout@v3
-    
+  #  - uses: actions/cache@v2   
     - name: use Node.js 16
     - uses: actions/setup-node@v3
       with:
