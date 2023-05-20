@@ -70,13 +70,7 @@ jobs:
       with:
        node-version: 16
        
-      # npm install
-    - name: npm install and build
-      run: |
-          npm install
-          npm run build
-      env:
-       CI: true
+
   #     cache: 'npm'
   #     cache-dependency-path: subdir/package-lock.json
   #  - run: npm ci
