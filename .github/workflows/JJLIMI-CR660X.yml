@@ -47,32 +47,27 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
     #- name: WeChat notification
     #  run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}开始编译
       
-    - name: Checkout
+    - name: Checkout private tools
       uses: actions/checkout@v3
-      
-  #  - name: setup-node
-  #    uses: actions/setup-node@v3
-  #    with:
-  #      node-version: 16.x
-  #  - uses: actions/cache@v2   
-    - name: use Node.js 16
+      with:
+        repository: my-org/my-private-tools
+        token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+        path: my-tools
+        
+    - name: node
+    - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
-       node-version: 16
-       
-
-  #     cache: 'npm'
-  #     cache-dependency-path: subdir/package-lock.json
-  #  - run: npm ci
-  #  - run: npm test
-       
+        node-version: 18
+    - run: npm ci
+    - run: npm test
 
     - name: Check server performance
       run: |
