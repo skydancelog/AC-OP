@@ -55,13 +55,18 @@ jobs:
     #  run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}开始编译
       
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
       
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
         node-version: 16.x
         
+    - name: Use the dev-drprasad/delete-older-releases action
+      uses: dev-drprasad/delete-older-releases@v0.1.0
+       
+       
+
     - name: Check server performance
       run: |
         echo "警告⚠"
