@@ -54,18 +54,29 @@ jobs:
     #- name: WeChat notification
     #  run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}开始编译
       
-    - name: Checkout
-      uses: actions/checkout@v3
+   # - name: Checkout
+   #   uses: actions/checkout@v3
       
+  #  - name: setup-node
+  #    uses: actions/setup-node@v3
+  #    with:
+  #      node-version: 16.x
+  #  - uses: actions/cache@v2
     - name: setup-node
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16.x
-    - uses: actions/cache@v2
     - uses: actions/checkout@v3
+    
+    - name: use Node.js 16
     - uses: actions/setup-node@v3
       with:
        node-version: 16
+       
+    - name: npm install and test
+     
+      run: |
+            npm install
+            npm run test
+      env:
+            CI: true
   #     cache: 'npm'
   #     cache-dependency-path: subdir/package-lock.json
   #  - run: npm ci
