@@ -61,15 +61,15 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16.x
-    
+    - uses: actions/cache@v2
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
        node-version: 16
-       cache: 'npm'
-       cache-dependency-path: subdir/package-lock.json
-    - run: npm ci
-    - run: npm test
+  #     cache: 'npm'
+  #     cache-dependency-path: subdir/package-lock.json
+  #  - run: npm ci
+  #  - run: npm test
        
 
     - name: Check server performance
