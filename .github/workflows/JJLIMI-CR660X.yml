@@ -18,7 +18,7 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'      
-  schedule:
+  #schedule:
   #  - cron: 0 21 * * *
   #  每天晚上凌晨0点自动编译.
   #  watch:
@@ -26,7 +26,7 @@ on:
   #  - cron: 0 8 */5 * *
   #  - cron: 0 22,14 * * *
   #  每天运行两次，在上午 6 点和晚上 22 点。
-     - cron: 0 20 * * fri
+  #   - cron: 0 20 * * fri
   #  每周五凌晨四点自动编译。
 
 env:
