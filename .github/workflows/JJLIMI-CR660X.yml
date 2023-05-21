@@ -7,7 +7,7 @@
 # https://github.com/Joecaicai/Actions-OpenWrt
 # Description: Build OpenWrt using GitHub Actions
 #============================================================
-#G20230521-pm0409
+#G20230522-am0041
 name: JJLIMI-CR660X
 
 on:
