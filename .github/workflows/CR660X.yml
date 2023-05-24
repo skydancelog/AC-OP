@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #============================================================
 #G20230522-am0041
-name: JJLIMI-CR660X
+name: CR660X
 
 on:
   repository_dispatch:
@@ -33,7 +33,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master 
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/JJLIMI-CR660X.config
+  CONFIG_FILE: config/CR660X.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: true
@@ -42,8 +42,8 @@ env:
   UPLOAD_WETRANSFER: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: JJLIMI-CR660X
-  PRODUCT_NAME: JJLIMI-CR660X
+  FILE_NAME: CR660X
+  PRODUCT_NAME: CR660X
 
 jobs:
   build:
