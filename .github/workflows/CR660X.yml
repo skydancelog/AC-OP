@@ -184,8 +184,6 @@ jobs:
         # 原来：.../tree/main/...
         # 正确：.../trunk/...
         svn co https://github.com/kenzok8/small-package/trunk/luci-app-passwall package/luci-app-passwall || true
-
-    # 后续步骤保持原模板逻辑不变
        
 #        echo "::set-env name=useVersionInfo::$useVersionInfo"
 #        echo "::set-env name=DATE::$(date "+%Y-%m-%d %H:%M:%S")"
